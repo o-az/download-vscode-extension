@@ -1,5 +1,15 @@
 # VSCode Extension Downloader
 
+<center>
+<a href="https://visx.evm.workers.dev" target="_blank" rel="noopener noreferrer" style="font-size: 1.5rem; font-weight: bold;">visx.evm.workers.dev</a>
+</center>
+
+___
+
+This site lets you download a Code extension by pasting the extension URL from MSFT Marketplace.
+
+<video src="./.github/demo.mov" controls width="100%" height="100%" autoplay loop muted />
+
 ## Get started
 
 install dependencies
