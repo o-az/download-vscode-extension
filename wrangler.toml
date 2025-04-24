@@ -1,0 +1,20 @@
+#: schema https://esm.sh/wrangler/config-schema.json
+# https://developers.cloudflare.com/workers/wrangler/configuration
+
+name = "visx"
+minify = true
+keep_vars = true
+workers_dev = true
+main = "./dist/index.js"
+assets = { directory = "./dist" }
+compatibility_date = "2025-04-20"
+compatibility_flags = ["nodejs_compat"]
+
+placement = { mode = "smart" }
+
+dev = { port = 6969 }
+
+# https://developers.cloudflare.com/workers/observability/logs/workers-logs/
+observability = { enabled = true, logs = { enabled = true } }
+
+vars = { BUN_VERSION = "1.2.10" }

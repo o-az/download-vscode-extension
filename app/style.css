@@ -1,0 +1,26 @@
+@import "tailwindcss" source("../app");
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+*::selection {
+  color: hsl(0, 0%, 0%);
+  background-color: hsl(290, 100%, 90%);
+}
+
+h1 > a {
+  @apply text-blue-500;
+}
+
+a {
+  text-decoration: underline;
+  color: #5f9dff;
+}
+
+input,
+button {
+  touch-action: manipulation;
+}
+
+button:hover {
+  cursor: pointer;
+}

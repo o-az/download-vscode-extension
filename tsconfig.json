@@ -1,0 +1,38 @@
+{
+  "compilerOptions": {
+    "noEmit": true,
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "esModuleInterop": true,
+    "strict": true,
+    "alwaysStrict": true,
+    "erasableSyntaxOnly": true,
+    "resolvePackageJsonImports": true,
+    "allowImportingTsExtensions": true,
+    "lib": [
+      "DOM",
+      "ESNext",
+      "DOM.Iterable"
+    ],
+    "types": [
+      "vite/client",
+      "@cloudflare/workers-types"
+    ],
+    "jsx": "react-jsx",
+    "jsxImportSource": "hono/jsx"
+  },
+  "include": [
+    "app/**/*.ts",
+    "app/**/*.tsx"
+  ],
+  "files": [
+    "reset.d.ts",
+    "vite.config.ts"
+  ],
+  "exclude": [
+    "_",
+    "dist",
+    "node_modules"
+  ]
+}
