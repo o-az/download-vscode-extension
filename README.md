@@ -8,7 +8,7 @@ ___
 
 This site lets you download a Code extension by pasting the extension URL from MSFT Marketplace.
 
-![Demo](https://github.com/o-az/download-vscode-extension/raw/refs/heads/main/.github/demo.mp4)
+https://github.com/user-attachments/assets/424ba4a6-1f8e-4f2e-84e1-53478d9b8073
 
 ## Get started
 
