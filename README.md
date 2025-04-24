@@ -9,7 +9,7 @@ ___
 This site lets you download a Code extension by pasting the extension URL from MSFT Marketplace.
 
 <div align="center">
-<video src="./.github/demo.mov" controls width="100%" height="100%" autoplay loop muted />
+<video src="./.github/demo.mp4" controls width="100%" height="100%" autoplay loop muted />
 </div>
 
 ## Get started
