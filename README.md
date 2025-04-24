@@ -8,9 +8,7 @@ ___
 
 This site lets you download a Code extension by pasting the extension URL from MSFT Marketplace.
 
-<div align="center">
-<video src="./.github/demo.webm" controls width="100%" height="100%" autoplay loop muted />
-</div>
+![Demo](https://github.com/o-az/download-vscode-extension/raw/refs/heads/main/.github/demo.mp4)
 
 ## Get started
 
