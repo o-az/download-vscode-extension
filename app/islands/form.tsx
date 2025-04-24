@@ -32,7 +32,7 @@ async function fetchExtensionMetadata(url: string) {
     },
   )
 
-  const data = await response.json<CodeExtensionResponse>()
+  const data = (await response.json()) as CodeExtensionResponse
   const [extension] = data?.results?.at(0)?.extensions ?? []
 
   const extensionName = extension?.extensionName
