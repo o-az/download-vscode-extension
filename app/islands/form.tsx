@@ -64,20 +64,26 @@ export function Form() {
   return (
     <form action={handleSubmit} class="flex items-center w-full justify-center flex-col gap-5">
       <fieldset class="w-full flex flex-col gap-5 items-center justify-center">
-        <legend class="mb-5">VSCode Marketplace Downloader</legend>
+        <legend class="mb-5 sr-only">VSCode Marketplace Downloader form</legend>
+        <br />
         <p class="w-full">
           <input
             id="url"
             type="url"
             name="url"
-            class="bg-gray-100 rounded-md p-1 w-full text-black text-sm"
+            class="bg-gray-100 rounded-md py-1 w-full text-black text-sm h-14 px-3"
             placeholder="https://marketplace.visualstudio.com/items?itemName=vscode-extension-marketplace-downloader.vscode-extension-marketplace-downloader"
           />
           <label for="url" class="sr-only">
             URL
           </label>
         </p>
-        <button type="submit">Download</button>
+        <button
+          type="submit"
+          class="mb-10 group relative inline-flex h-12 items-center justify-center overflow-hidden rounded-md border border-neutral-200 bg-zinc-200 px-6 font-medium text-neutral-600 transition-all duration-100 [box-shadow:5px_5px_rgb(82_82_82)] active:translate-x-[3px] active:translate-y-[3px] active:[box-shadow:0px_0px_rgb(82_82_82)]"
+        >
+          Download
+        </button>
       </fieldset>
     </form>
   )
