@@ -8,4 +8,4 @@ ___
 
 This site lets you download a Code extension by pasting the extension URL from the [Visual Studio Extensions Marketplace](https://marketplace.visualstudio.com).
 
-![demo walkthrough](https://github.com/user-attachments/assets/424ba4a6-1f8e-4f2e-84e1-53478d9b8073)
+https://github.com/user-attachments/assets/424ba4a6-1f8e-4f2e-84e1-53478d9b8073
