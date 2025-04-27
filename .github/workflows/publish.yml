@@ -37,6 +37,11 @@ jobs:
           bun --bun vite build --mode client
           bun --bun vite build
 
+      - name: 'Set Commit SHA'
+        run: |
+          COMMIT_SHA=$(git rev-parse --short HEAD)
+          echo "COMMIT_SHA=$COMMIT_SHA" >> $GITHUB_ENV
+
       - name: '🔶 Publish - Cloudflare Workers'
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
@@ -45,4 +50,5 @@ jobs:
           bun x wrangler@latest deploy \
             --config='wrangler.toml' \
             --keep-vars \
-            --var 'ENVIRONMENT:production'
+            --var 'ENVIRONMENT:production' \
+            --var 'COMMIT_SHA:${{ env.COMMIT_SHA }}'

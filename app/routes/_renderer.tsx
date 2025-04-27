@@ -18,6 +18,11 @@ export default jsxRenderer(({ children, Layout: _ }, context) => {
           name="viewport"
           content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no"
         />
+        <meta
+          name="description"
+          content="Download VSCode extensions from the Visual Studio Marketplace"
+        />
+        <meta name="x-app-version" content={context.env.COMMIT_SHA} />
         <Link rel="stylesheet" href="/app/style.css" />
         <Script async src="/app/client.ts" nonce={context.get('secureHeadersNonce')} />
         <Style />
@@ -26,6 +31,15 @@ export default jsxRenderer(({ children, Layout: _ }, context) => {
         <main class="max-w-3xl sm:m-4 sm:p-4 m-2 p-2">
           <article>{children}</article>
         </main>
+        <footer class="text-center text-sm">
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href="https://github.com/o-az/download-vscode-extension"
+          >
+            github.com/o-az/download-vscode-extension
+          </a>
+        </footer>
       </body>
     </html>
   )

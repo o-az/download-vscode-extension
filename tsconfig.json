@@ -16,7 +16,8 @@
     ],
     "types": [
       "bun",
-      "vite/client"
+      "vite/client",
+      "@cloudflare/workers-types"
     ],
     "jsx": "react-jsx",
     "jsxImportSource": "hono/jsx"

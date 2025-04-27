@@ -6,6 +6,8 @@
  * https://marketplace.visualstudio.com/_apis/public/gallery/publishers/<publisher>/vsextensions/<extension>/<version>/vspackage
  */
 
+const VISUAL_STUDIO_MARKETPLACE_URL = 'https://marketplace.visualstudio.com'
+
 async function fetchExtensionMetadata(url: string) {
   const abortController = new AbortController()
 
@@ -13,7 +15,7 @@ async function fetchExtensionMetadata(url: string) {
   if (!extensionAuthorAndName) throw new Error('Invalid URL')
 
   const response = await fetch(
-    'https://marketplace.visualstudio.com/_apis/public/gallery/extensionquery',
+    `${VISUAL_STUDIO_MARKETPLACE_URL}/_apis/public/gallery/extensionquery`,
     {
       method: 'POST',
       signal: abortController.signal,
@@ -22,11 +24,7 @@ async function fetchExtensionMetadata(url: string) {
         Accept: 'application/json;api-version=3.0-preview.1',
       },
       body: JSON.stringify({
-        filters: [
-          {
-            criteria: [{ filterType: 7, value: extensionAuthorAndName }],
-          },
-        ],
+        filters: [{ criteria: [{ filterType: 7, value: extensionAuthorAndName }] }],
         flags: 23,
       }),
     },
@@ -49,7 +47,7 @@ export function Form() {
     const { extension, publisher, version } = await fetchExtensionMetadata(url)
     if (!publisher || !extension || !version) return
 
-    const downloadUrl = `https://marketplace.visualstudio.com/_apis/public/gallery/publishers/${publisher}/vsextensions/${extension}/${version}/vspackage`
+    const downloadUrl = `${VISUAL_STUDIO_MARKETPLACE_URL}/_apis/public/gallery/publishers/${publisher}/vsextensions/${extension}/${version}/vspackage`
 
     const downloadAnchor = document.createElement('a', { is: 'download' })
     Object.assign(downloadAnchor, {
@@ -72,7 +70,7 @@ export function Form() {
             type="url"
             name="url"
             class="bg-gray-100 rounded-md py-1 w-full text-black text-sm h-14 px-3"
-            placeholder="https://marketplace.visualstudio.com/items?itemName=vscode-extension-marketplace-downloader.vscode-extension-marketplace-downloader"
+            placeholder={`${VISUAL_STUDIO_MARKETPLACE_URL}/items?itemName=vscode-extension-marketplace-downloader.vscode-extension-marketplace-downloader`}
           />
           <label for="url" class="sr-only">
             URL

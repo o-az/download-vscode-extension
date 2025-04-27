@@ -15,7 +15,7 @@ app.use(csrf())
 app.use(logger())
 app.use(timeout(4_000))
 app.use(prettyJSON({ space: 2 }))
-app.use(requestId({ headerName: 'code-extension-downloader-Request-Id' }))
+app.use(requestId({ headerName: 'Visx-Extension-Downloader-Request-Id' }))
 app.use(cors({ origin: '*', allowMethods: ['GET', 'OPTIONS', 'POST', 'HEAD'] }))
 
 app.get('/ping', (context) => context.text('pong', 200))
@@ -33,4 +33,4 @@ app.onError((error, context) => {
 
 showRoutes(app)
 
-export default app
+export default app satisfies ExportedHandler<Env>

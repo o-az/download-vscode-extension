@@ -8,7 +8,7 @@ workers_dev = true
 main = "./dist/index.js"
 assets = { directory = "./dist" }
 compatibility_date = "2025-04-20"
-compatibility_flags = ["nodejs_compat"]
+compatibility_flags = ["nodejs_compat", "nodejs_compat_populate_process_env"]
 
 placement = { mode = "smart" }
 
@@ -17,4 +17,6 @@ dev = { port = 6969 }
 # https://developers.cloudflare.com/workers/observability/logs/workers-logs/
 observability = { enabled = true, logs = { enabled = true } }
 
-vars = { BUN_VERSION = "1.2.10" }
+[vars]
+BUN_VERSION = "1.2.10"
+ENVIRONMENT = "development"
