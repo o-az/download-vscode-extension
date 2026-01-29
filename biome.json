@@ -1,41 +1,84 @@
 {
-  "$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
+  "$schema": "https://biomejs.dev/schemas/2.3.13/schema.json",
   "vcs": {
     "enabled": true,
     "clientKind": "git",
     "useIgnoreFile": true
   },
+  "assist": {
+    "enabled": true,
+    "actions": {
+      "recommended": true,
+      "source": {
+        "recommended": true,
+        "organizeImports": "off"
+      }
+    }
+  },
   "files": {
-    "include": [
-      "*"
-    ],
-    "ignore": [
-      "_",
-      "*.css",
-      "bun.lock"
+    "includes": [
+      "**",
+      "!_",
+      "src/**",
+      "!node_modules",
+      "!src/routeTree.gen.ts",
+      "!worker-configuration.d.ts"
     ],
     "ignoreUnknown": true
   },
-  "organizeImports": {
-    "enabled": false
+  "html": {
+    "formatter": {
+      "enabled": true,
+      "bracketSameLine": false,
+      "attributePosition": "auto",
+      "indentScriptAndStyle": true,
+      "selfCloseVoidElements": "never"
+    },
+    "linter": {
+      "enabled": true
+    },
+    "assist": {
+      "enabled": true
+    },
+    "experimentalFullSupportEnabled": true
   },
   "formatter": {
     "enabled": true,
     "indentWidth": 2,
     "lineWidth": 100,
     "indentStyle": "space",
+    "bracketSpacing": true,
+    "bracketSameLine": false,
     "formatWithErrors": true,
-    "ignore": [
-      "_",
-      "bun.lock"
+    "attributePosition": "multiline",
+    "includes": [
+      "**",
+      "!_",
+      "!bun.lock",
+      "!src/routeTree.gen.ts"
     ]
   },
   "linter": {
+    "domains": {
+      "solid": "all",
+      "project": "all"
+    },
+    "includes": [
+      "**",
+      "!_",
+      "!bun.lock",
+      "!node_modules",
+      "!src/routeTree.gen.ts"
+    ],
     "enabled": true,
     "rules": {
       "recommended": true,
+      "correctness": {
+        "noUnusedVariables": "off",
+        "useImportExtensions": "off",
+        "noUndeclaredDependencies": "off"
+      },
       "complexity": {
-        "noForEach": "off",
         "noBannedTypes": "off",
         "noStaticOnlyClass": "off",
         "noUselessConstructor": "off"
@@ -44,28 +87,51 @@
         "noDelete": "off"
       },
       "style": {
-        "noVar": "off",
         "useTemplate": "off",
         "noNonNullAssertion": "off",
         "useNamingConvention": "off",
-        "noUnusedTemplateLiteral": "off"
+        "noUnusedTemplateLiteral": "off",
+        "noDescendingSpecificity": "off"
       },
       "suspicious": {
-        "noAssignInExpressions": "off",
-        "noConfusingVoidType": "off",
+        "noExplicitAny": "off",
         "noEmptyInterface": "off",
-        "noExplicitAny": "off"
+        "noConfusingVoidType": "off",
+        "noAssignInExpressions": "off"
       }
     }
   },
   "javascript": {
+    "jsxRuntime": "transparent",
+    "assist": {
+      "enabled": true
+    },
+    "globals": [
+      "process"
+    ],
     "formatter": {
+      "enabled": true,
+      "indentWidth": 2,
+      "lineWidth": 100,
       "quoteStyle": "single",
-      "trailingCommas": "all",
-      "semicolons": "asNeeded"
+      "indentStyle": "space",
+      "bracketSpacing": true,
+      "bracketSameLine": true,
+      "trailingCommas": "none",
+      "semicolons": "asNeeded",
+      "jsxQuoteStyle": "single",
+      "quoteProperties": "asNeeded",
+      "arrowParentheses": "asNeeded",
+      "attributePosition": "multiline"
+    },
+    "linter": {
+      "enabled": true
     }
   },
   "json": {
+    "assist": {
+      "enabled": true
+    },
     "linter": {
       "enabled": true
     },
@@ -74,13 +140,36 @@
       "allowTrailingCommas": true
     },
     "formatter": {
+      "lineWidth": 1,
       "enabled": true,
-      "lineWidth": 1
+      "indentStyle": "space"
+    }
+  },
+  "css": {
+    "assist": {
+      "enabled": true
+    },
+    "linter": {
+      "enabled": true
+    },
+    "parser": {
+      "tailwindDirectives": true,
+      "allowWrongLineComments": true
+    },
+    "globals": [
+      "@theme"
+    ],
+    "formatter": {
+      "enabled": true,
+      "indentWidth": 2,
+      "lineWidth": 100,
+      "indentStyle": "space",
+      "quoteStyle": "single"
     }
   },
   "overrides": [
     {
-      "include": [
+      "includes": [
         "*.json",
         "*.jsonc"
       ],
@@ -98,7 +187,7 @@
       }
     },
     {
-      "include": [
+      "includes": [
         "tsconfig.json"
       ],
       "json": {

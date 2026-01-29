@@ -21,13 +21,13 @@ async function fetchExtensionMetadata(url: string) {
       signal: abortController.signal,
       headers: {
         'Content-Type': 'application/json',
-        Accept: 'application/json;api-version=3.0-preview.1',
+        Accept: 'application/json;api-version=3.0-preview.1'
       },
       body: JSON.stringify({
         filters: [{ criteria: [{ filterType: 7, value: extensionAuthorAndName }] }],
-        flags: 23,
-      }),
-    },
+        flags: 23
+      })
+    }
   )
 
   const data = (await response.json()) as CodeExtensionResponse
@@ -52,7 +52,7 @@ export function Form() {
     const downloadAnchor = document.createElement('a', { is: 'download' })
     Object.assign(downloadAnchor, {
       href: downloadUrl,
-      download: `${publisher}.${extension}-${version}.vsix`,
+      download: `${publisher}.${extension}-${version}.vsix`
     })
     downloadAnchor.click()
     downloadAnchor.remove()
@@ -60,26 +60,29 @@ export function Form() {
   }
 
   return (
-    <form action={handleSubmit} class="flex items-center w-full justify-center flex-col gap-5">
-      <fieldset class="w-full flex flex-col gap-5 items-center justify-center">
-        <legend class="mb-5 sr-only">VSCode Marketplace Downloader form</legend>
+    <form
+      action={handleSubmit}
+      class='flex items-center w-full justify-center flex-col gap-5'>
+      <fieldset class='w-full flex flex-col gap-5 items-center justify-center'>
+        <legend class='mb-5 sr-only'>VSCode Marketplace Downloader form</legend>
         <br />
-        <p class="w-full">
+        <p class='w-full'>
           <input
-            id="url"
-            type="url"
-            name="url"
-            class="bg-gray-100 rounded-md py-1 w-full text-black text-sm h-14 px-3"
+            id='url'
+            type='url'
+            name='url'
+            class='bg-gray-100 rounded-md py-1 w-full text-black text-xs! h-14 px-3'
             placeholder={`${VISUAL_STUDIO_MARKETPLACE_URL}/items?itemName=vscode-extension-marketplace-downloader.vscode-extension-marketplace-downloader`}
           />
-          <label for="url" class="sr-only">
+          <label
+            for='url'
+            class='sr-only'>
             URL
           </label>
         </p>
         <button
-          type="submit"
-          class="mb-10 group relative inline-flex h-12 items-center justify-center overflow-hidden rounded-md border border-neutral-200 bg-zinc-200 px-6 font-medium text-neutral-600 transition-all duration-100 [box-shadow:5px_5px_rgb(82_82_82)] active:translate-x-[3px] active:translate-y-[3px] active:[box-shadow:0px_0px_rgb(82_82_82)]"
-        >
+          type='submit'
+          class='mb-10 group relative inline-flex h-12 items-center justify-center overflow-hidden rounded-md border border-neutral-200 bg-zinc-200 px-6 font-medium text-neutral-600 transition-all duration-100 [box-shadow:5px_5px_rgb(82_82_82)] active:translate-x-[3px] active:translate-y-[3px] active:[box-shadow:0px_0px_rgb(82_82_82)]'>
           Download
         </button>
       </fieldset>
