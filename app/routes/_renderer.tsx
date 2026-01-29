@@ -9,7 +9,7 @@ export default jsxRenderer(({ children, Layout: _ }, context) => {
       class='font-mono dark dark:bg-[#111111] dark:text-white'>
       <head>
         <meta charset='UTF-8' />
-        <title>VSCode Extensions in Curaor</title>
+        <title>VSCode Extensions in Cursor</title>
         <link
           rel='icon'
           href='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%2210 0 100 100%22><text y=%22.90em%22 font-size=%2290%22>🌩</text></svg>'
