@@ -8,9 +8,7 @@ workers_dev = true
 main = "./dist/index.js"
 assets = { directory = "./dist" }
 compatibility_date = "2026-01-20"
-compatibility_flags = ["nodejs_compat", "nodejs_compat_populate_process_env"]
-
-placement = { mode = "smart" }
+compatibility_flags = ["nodejs_compat"]
 
 dev = { port = 6969 }
 
@@ -18,5 +16,5 @@ dev = { port = 6969 }
 observability = { enabled = true, logs = { enabled = true } }
 
 [vars]
-BUN_VERSION = "1.2.10"
-ENVIRONMENT = "development"
+BUN_VERSION = "1.3.8"
+NODE_ENV = "production"
