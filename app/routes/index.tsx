@@ -3,26 +3,29 @@ import { createRoute } from 'honox/factory'
 
 export default createRoute((context, _next) => {
   return context.render(
-    <main class="uppercase space-y-8 w-full">
-      <h1 class="text-center text-2xl font-bold">VSCode Extension Downloader</h1>
+    <main class='uppercase space-y-8 w-full'>
+      <h1 class='text-center text-xl font-bold'>VSCode Extension Downloader</h1>
       <Form />
-      <div class="text-center text-pretty mt-10">
-        <ul>
+      <div class='text-center text-pretty mt-10'>
+        <ul class='list-decimal list-inside *:text-left'>
           <li>
-            Copy an extension URL from{' '}
-            <a href="https://marketplace.visualstudio.com" target="_blank" rel="noreferrer">
-              Visual Studio Extensions Marketplace
+            Copy URL from{' '}
+            <a
+              href='https://marketplace.visualstudio.com'
+              target='_blank'
+              rel='noreferrer'>
+              VS Extensions Marketplace
             </a>{' '}
-            and paste it here to download the extension
           </li>
-          <br />
+          <li>paste it in the above input field</li>
+          <li>Click download</li>
           <li>
-            Then drag the{' '}
-            <span class="font-mono bg-gray-100 px-1 rounded-md font-semibold text-lg">.visx</span>{' '}
-            and drop on the extensions view in Cursor / Windsurf / VSCode.
+            drag the downloaded{' '}
+            <span class='font-mono bg-gray-100 px-1 rounded-md font-semibold text-lg'>.visx</span>{' '}
+            to the extensions view in Cursor/Windsurf/VSCode.
           </li>
         </ul>
       </div>
-    </main>,
+    </main>
   )
 })

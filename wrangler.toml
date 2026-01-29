@@ -7,7 +7,7 @@ keep_vars = true
 workers_dev = true
 main = "./dist/index.js"
 assets = { directory = "./dist" }
-compatibility_date = "2025-04-20"
+compatibility_date = "2026-01-20"
 compatibility_flags = ["nodejs_compat", "nodejs_compat_populate_process_env"]
 
 placement = { mode = "smart" }

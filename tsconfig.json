@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "skipLibCheck": true,
     "noEmit": true,
     "target": "ESNext",
     "module": "ESNext",
@@ -16,23 +17,24 @@
     ],
     "types": [
       "bun",
-      "vite/client",
-      "@cloudflare/workers-types"
+      "vite/client"
     ],
     "jsx": "react-jsx",
     "jsxImportSource": "hono/jsx"
   },
   "include": [
-    "app/**/*.ts",
-    "app/**/*.tsx"
+    "./app/**/*.ts",
+    "./app/**/*.tsx"
   ],
   "files": [
     "reset.d.ts",
-    "vite.config.ts"
+    "vite.config.ts",
+    "worker-configuration.d.ts"
   ],
   "exclude": [
     "_",
     "dist",
-    "node_modules"
+    "node_modules",
+    "**/node_modules/**"
   ]
 }

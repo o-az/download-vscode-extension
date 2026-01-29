@@ -8,9 +8,9 @@ export default defineConfig({
     tailwindcss(),
     honox({
       client: {
-        input: ['./app/style.css'],
-      },
+        input: ['./app/style.css']
+      }
     }),
-    honoViteWorkers(),
-  ],
+    honoViteWorkers()
+  ]
 })

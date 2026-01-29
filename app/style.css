@@ -1,6 +1,21 @@
-@import "tailwindcss" source("../app");
+@import 'tailwindcss' source("../app");
 
 @custom-variant dark (&:where(.dark, .dark *));
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  min-height: 100%;
+  min-width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
 *::selection {
   color: hsl(0, 0%, 0%);

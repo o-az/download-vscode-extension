@@ -18,15 +18,15 @@ app.use(prettyJSON({ space: 2 }))
 app.use(requestId({ headerName: 'Visx-Extension-Downloader-Request-Id' }))
 app.use(cors({ origin: '*', allowMethods: ['GET', 'OPTIONS', 'POST', 'HEAD'] }))
 
-app.get('/ping', (context) => context.text('pong', 200))
+app.get('/ping', context => context.text('pong', 200))
 
 app.onError((error, context) => {
   const { remote } = getConnInfo(context)
   const requestId = context.get('requestId')
   console.error(
     [`[${requestId}]`, `-[${remote.address}]`, `-[${context.req.url}]:\n`, `${error.message}`].join(
-      '',
-    ),
+      ''
+    )
   )
   return context.json({ error: error.message }, 500)
 })
